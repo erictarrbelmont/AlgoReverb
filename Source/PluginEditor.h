@@ -38,17 +38,18 @@ private:
     Slider modulationSlider;
     Slider wetDrySlider;
     
+    Slider predelaySlider;
     Slider diffusionSlider;
     Slider lpfSlider;
-    Slider outputSlider;
     
     Label reverbTimeLabel;
     Label modulationLabel;
     Label wetDryLabel;
     
+    Label predelayLabel;
     Label diffusionLabel;
     Label lpfLabel;
-    Label outputLabel;
+    
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AlgoReverbAudioProcessorEditor)
 };

@@ -58,10 +58,23 @@ AlgoReverbAudioProcessorEditor::AlgoReverbAudioProcessorEditor (AlgoReverbAudioP
     wetDryLabel.setJustificationType(Justification::centred);
     addAndMakeVisible(wetDryLabel);
     
+    // PREDELAY SLIDER
+    predelaySlider.addListener(this);
+    predelaySlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
+    predelaySlider.setBounds(50, 175, 100, 100);
+    predelaySlider.setTextBoxStyle(Slider::TextBoxBelow, false, 50, 30);
+    predelaySlider.setRange(0.f, 200.f, 1.f);
+    addAndMakeVisible(predelaySlider);
+    
+    predelayLabel.setText("Predelay", dontSendNotification);
+    predelayLabel.attachToComponent(&predelaySlider, false);
+    predelayLabel.setJustificationType(Justification::centred);
+    addAndMakeVisible(predelayLabel);
+    
     // DIFFUSION SLIDER
     diffusionSlider.addListener(this);
     diffusionSlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
-    diffusionSlider.setBounds(50, 175, 100, 100);
+    diffusionSlider.setBounds(150, 175, 100, 100);
     diffusionSlider.setTextBoxStyle(Slider::TextBoxBelow, false, 50, 30);
     diffusionSlider.setRange(0.2f, 0.9f, 0.01f);
     addAndMakeVisible(diffusionSlider);
@@ -74,7 +87,7 @@ AlgoReverbAudioProcessorEditor::AlgoReverbAudioProcessorEditor (AlgoReverbAudioP
     // LPF SLIDER
     lpfSlider.addListener(this);
     lpfSlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
-    lpfSlider.setBounds(150, 175, 100, 100);
+    lpfSlider.setBounds(250, 175, 100, 100);
     lpfSlider.setTextBoxStyle(Slider::TextBoxBelow, false, 50, 30);
     lpfSlider.setRange(1000.f, 20000.f, 1.f);
     addAndMakeVisible(lpfSlider);
@@ -84,18 +97,7 @@ AlgoReverbAudioProcessorEditor::AlgoReverbAudioProcessorEditor (AlgoReverbAudioP
     lpfLabel.setJustificationType(Justification::centred);
     addAndMakeVisible(lpfLabel);
     
-    // OUTPUT GAIN SLIDER
-    outputSlider.addListener(this);
-    outputSlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
-    outputSlider.setBounds(250, 175, 100, 100);
-    outputSlider.setTextBoxStyle(Slider::TextBoxBelow, false, 50, 30);
-    outputSlider.setRange(0.f, 1.f, 0.01f);
-    addAndMakeVisible(outputSlider);
     
-    outputLabel.setText("Output", dontSendNotification);
-    outputLabel.attachToComponent(&outputSlider, false);
-    outputLabel.setJustificationType(Justification::centred);
-    addAndMakeVisible(outputLabel);
 }
 
 AlgoReverbAudioProcessorEditor::~AlgoReverbAudioProcessorEditor()
@@ -128,14 +130,15 @@ void AlgoReverbAudioProcessorEditor::sliderValueChanged(Slider * slider){
     if (slider == &wetDrySlider){
         
     }
+    if (slider == &predelaySlider){
+        
+    }
     if (slider == &diffusionSlider){
         
     }
     if (slider == &lpfSlider){
         
     }
-    if (slider == &outputSlider){
-        
-    }
+    
     
 }
