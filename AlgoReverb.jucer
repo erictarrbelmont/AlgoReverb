@@ -15,6 +15,8 @@
             file="Source/FractionalDelay.cpp"/>
       <FILE id="YuYuni" name="FractionalDelay.hpp" compile="0" resource="0"
             file="Source/FractionalDelay.hpp"/>
+      <FILE id="AZ6T6m" name="FDN.cpp" compile="1" resource="0" file="Source/FDN.cpp"/>
+      <FILE id="qVeaAk" name="FDN.hpp" compile="0" resource="0" file="Source/FDN.hpp"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>

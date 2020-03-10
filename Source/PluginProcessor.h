@@ -11,6 +11,8 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "FDN.hpp"
+#include "FractionalDelay.hpp"
 
 //==============================================================================
 /**
@@ -54,8 +56,20 @@ public:
     //==============================================================================
     void getStateInformation (MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
-
+    
+    float timeAmount;
+    float modulationAmount;
+    float wetAmount;
+    float predelayMS;
+    float diffusionAmount;
+    float lpfFreq;
+    
 private:
+    float Fs;
+    
+    FractionalDelay predelay{0.f,0.f};
+    FDN fdn;
+    
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AlgoReverbAudioProcessor)
 };
