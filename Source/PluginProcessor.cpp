@@ -98,6 +98,7 @@ void AlgoReverbAudioProcessor::prepareToPlay (double sampleRate, int samplesPerB
     Fs = sampleRate;
     predelay.setFs(Fs);
     fdn.setFs(Fs);
+    allpassFilter.setFs(Fs);
     lowpassFilter.setFs(Fs);
 }
 
@@ -147,6 +148,9 @@ void AlgoReverbAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuf
     fdn.setDepth(modulationAmount);
     fdn.setFeedbackGain(timeAmount);
     
+    allpassFilter.setDepth(modulationAmount);
+    allpassFilter.setFeedbackGain(diffusionAmount);
+    
     lowpassFilter.setFreq(lpfFreq);
     
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
@@ -160,7 +164,9 @@ void AlgoReverbAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuf
             float wetPath = dryPath;
             wetPath = predelay.processSample(wetPath,channel);
             wetPath = fdn.processSample(wetPath, channel);
+            wetPath = allpassFilter.processSample(wetPath, channel);
             wetPath = lowpassFilter.processSample(wetPath, channel);
+            
             
             channelData[n] = (1.f-wetAmount) * dryPath + wetAmount * wetPath;
         }

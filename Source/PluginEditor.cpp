@@ -84,7 +84,7 @@ AlgoReverbAudioProcessorEditor::AlgoReverbAudioProcessorEditor (AlgoReverbAudioP
     diffusionSlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
     diffusionSlider.setBounds(150, 175, 100, 100);
     diffusionSlider.setTextBoxStyle(Slider::TextBoxBelow, false, 50, 30);
-    diffusionSlider.setRange(0.2f, 0.9f, 0.01f);
+    diffusionSlider.setRange(0.2f, 0.8f, 0.01f);
     diffusionSlider.setValue(0.2f);
     processor.diffusionAmount = 0.2f;
     addAndMakeVisible(diffusionSlider);

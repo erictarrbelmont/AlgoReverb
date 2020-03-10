@@ -14,6 +14,7 @@
 #include "FDN.hpp"
 #include "FractionalDelay.hpp"
 #include "Biquad.h"
+#include "APF.hpp"
 
 //==============================================================================
 /**
@@ -71,6 +72,7 @@ private:
     FractionalDelay predelay{0.f,0.f};
     FDN fdn;
     Biquad lowpassFilter{Biquad::FilterType::LPF,0.7071};
+    APF allpassFilter{881.f,0.55f};
     
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AlgoReverbAudioProcessor)

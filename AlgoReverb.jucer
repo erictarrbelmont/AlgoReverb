@@ -17,6 +17,8 @@
             file="Source/FractionalDelay.hpp"/>
       <FILE id="AZ6T6m" name="FDN.cpp" compile="1" resource="0" file="Source/FDN.cpp"/>
       <FILE id="qVeaAk" name="FDN.hpp" compile="0" resource="0" file="Source/FDN.hpp"/>
+      <FILE id="gIiFqq" name="APF.cpp" compile="1" resource="0" file="Source/APF.cpp"/>
+      <FILE id="c3TdZZ" name="APF.hpp" compile="0" resource="0" file="Source/APF.hpp"/>
       <FILE id="P5HRJB" name="Biquad.cpp" compile="1" resource="0" file="Source/Biquad.cpp"/>
       <FILE id="aghOoh" name="Biquad.h" compile="0" resource="0" file="Source/Biquad.h"/>
     </GROUP>
